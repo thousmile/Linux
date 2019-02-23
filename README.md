@@ -30,6 +30,7 @@ cal 5 2017
 # 进入计算器
 cal
 # 退出计算器
+
 quit
 
 ## --help 帮助文档
@@ -169,13 +170,71 @@ chmod u=rwx,g=rw,o=rw 文件名称
 chmod a-rwx 文件名称
 # 添加读写权限（作用于：拥有者，群组，其他人）
 chmod a+rw 文件名称
+```
+
+
+
+### 第六章
+
+**目录操作**
+
+```shell
+.			# 代表此层目录
+..			# 代表上一层目录
+-			# 代表前一个工作目录
+~			# 代表【当前用户身份】所在的家目录
+~account 	# 代表account这个用户的家目录(account就是账号名称 如：~root)
+
+cd  		# 变换目录
+cd .. 		# 去上一层目录
+cd - 		# 去前一个工作目录
+cd ~ 		# 去【当前用户身份】所在的家目录
+cd /home 	# 去/home这个目录
+
+pwd			# 显示当前目录
+
+mkdir 		# 建立一个新的目录
+mkdir test	# 建立一个新的test目录
+mkdir -p test1/test2/test3	# 级联建立目录
+mkdir -m 711 test4	# 新建目录时并且预设权限。如果没有加 -m 就是默认权限
+
+rmdir		# 删除一个空目录
+rmdir test  # 删除名为test的空目录
+rmdir -p test/test1  # 级联删除空目录
+```
+
+**文件与目录管理**
+
+```sh
+ls # 文件显示 常用命令。
+ls -a  # 显示全部文件，包括隐藏文件
+ls -A  # 显示全部文件，但是不包括【.】和【..】这两个目录
+ls -d  # 仅列出目录本身，而不是列出目录中的文件
+ls -l  # 长数据串行，包含文件的属性和权限等信息： 简写： ll
+
+cp # 文件拷贝 常用命令
+cp t1 /home/t2  # 拷贝当前目录中的t1到/home目录下，并且更改名称为t2
+cp t1 t2 t3 /home # 拷贝当前目录中的t1,t2,t3到/home目录下
+cp -i t1 /home/t2  # 拷贝当前目录中的t1到/home目录下，更改名称为t2。如果home下有t2 就覆盖
+cp /home/t2 .      # 拷贝/home/t2下的t2 到当前目录
+cp -r /tmp/test1/ /tmp/test2 # 拷贝test1这个目录，到test2目录下
+
+
+
+
+
+
+
+
+
+
 
 
 ```
 
 
 
-### 第六章
+
 
 ### 第七章
 
